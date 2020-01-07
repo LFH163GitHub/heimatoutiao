@@ -14,13 +14,18 @@
         没有账号？
         <a href="#/register" class="">去注册</a>
       </p>
-      <div data-v-4bc01e24="" class="button">登录按钮</div>
+      <hmbtn>登陆</hmbtn>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import hmbtn from '../components/hmbtn';
+export default {
+  components:{
+    hmbtn
+  }
+};
 </script>
 
 <style lang="less" scoped>
