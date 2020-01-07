@@ -6,8 +6,16 @@
       <div class="inputs">
         <hminput
           placeholder="请输入手机"
+          :rules="/^(\d{5,6})$|^(1\d{10})$/"
+          msg="输入的手机号不正确"
+          v-model="username"
         ></hminput>
-        <hminput placeholder="请输入密码"></hminput>
+        <hminput
+          placeholder="请输入密码"
+          :rules="/^\S{3,16}$/"
+          v-model="password"
+          msg="输入的密码不正确"
+        ></hminput>
       </div>
       <p class="tips">
         没有账号？
@@ -25,6 +33,14 @@ export default {
   components: {
     hmbtn,
     hminput
+  },
+  data() {
+    return {
+      user: {
+        username: "",
+        password: ""
+      }
+    };
   }
 };
 </script>
