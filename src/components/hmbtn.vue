@@ -9,7 +9,12 @@
 
 <script>
 export default {
-  props: ["icon"]
+  props: ["icon"],
+  methods: {
+    handlerclick(event){
+      this.$emit('click', event)
+    }
+  },
 };
 </script>
 
