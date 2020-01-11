@@ -53,9 +53,13 @@ export default {
         let res = await login(this.user);
         console.log(res);
         if (res.data.message === "用户不存在") {
-          this.$toast.fail(res.data.message);
+          // 给出用户提示
+          this.$toast.fail('用户或密码错误');
         } else {
-          this.$router.push({name:'Personal'})
+          // 实现页面的跳转
+          localStorage.setItem("toutiao_token", res.data.data.token);
+          localStorage.setItem("toutiao_user_info",JSON.stringify(res.data.data.user));
+          this.$router.push({path:`/personal/${res.data.data.user.id}`});
         }
       } else {
         this.$toast.fail("用户数据输入不合法");
