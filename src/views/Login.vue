@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="container">
-      <div class="close"><span class="iconfont iconicon-test"></span></div>
+      <div class="close"><span class="iconfont iconicon-test" @click="back"></span></div>
       <div class="logo"><span class="iconfont iconnew"></span></div>
       <div class="inputs">
         <hminput
@@ -45,6 +45,9 @@ export default {
     };
   },
   methods: {
+    back(){
+      this.$router.push({path:'/'})
+    },
     async Login() {
       if (
         /^(\d{5,6})$|^(1\d{10})$/.test(this.user.username) &&
