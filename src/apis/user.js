@@ -11,3 +11,12 @@ export const login = data => {
     }
   );
 };
+// 2.根据id获取用户详情
+export const getUserById = id => {
+  return axios({
+    url: `/user/${id}`,
+    // // 自定义的请求头，用于提供授权谁
+    // // headers:{后台规定的key:token}
+    // headers: { Authorization: localStorage.getItem("toutiao_token") }
+  });
+};
